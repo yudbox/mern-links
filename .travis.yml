@@ -7,13 +7,13 @@ cache:
     - $HOME/.npm
 
 script:
-  - cd app
+  - cd client
   - npm ci -q
   - npm run build
   - echo "hk.xaked.com" > build/CNAME
-  - cd ../api && echo "${HEROKU_LOGIN}" | base64 -d >> ~/.netrc
+  - cd ../ && echo "${HEROKU_LOGIN}" | base64 -d >> ~/.netrc
   - git init
-  - heroku git:remote -a api-mikkra
+  - heroku git:remote -a dry-reaches-96843
   - git add .
   - git commit -am 'Heroku deployment'
   - git push --force heroku master

@@ -31,7 +31,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 
-const PORT = config.get('port') || 5000;
+const PORT = config.get('port') || 80;
 const start =  async () => {
     try{
         await mongoose.connect(config.get('mongoUri'), {
