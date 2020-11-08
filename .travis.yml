@@ -1,0 +1,28 @@
+language: node_js
+node_js:
+  - "node"
+
+cache:
+  directories:
+    - $HOME/.npm
+
+script:
+  - cd app
+  - npm ci -q
+  - npm run build
+  - echo "hk.xaked.com" > build/CNAME
+  - cd ../api && echo "${HEROKU_LOGIN}" | base64 -d >> ~/.netrc
+  - git init
+  - heroku git:remote -a api-mikkra
+  - git add .
+  - git commit -am 'Heroku deployment'
+  - git push --force heroku master
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: client/build
+  target_branch: gh-pages
+  on:
+    branch: master

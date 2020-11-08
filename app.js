@@ -1,6 +1,6 @@
 const express = require('express');
 const config = require('config'); //подключили библиотеку config для работы с конфиг данными
-const mongoose = require('mongoose')
+const mongoose = require('mongoose') // подключили библтотеку mongo
 const path = require('path')
 
 const app = express();
