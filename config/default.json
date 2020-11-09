@@ -2,5 +2,6 @@
   "port": 5000,
   "mongoUri": "mongodb+srv://Aleks:mongo123456@cluster0.feups.mongodb.net/app?retryWrites=true&w=majority",
   "jwtSecret": "my secret string",
-  "baseUrl": "http://localhost:5000"
+  "baseUrl": "http://localhost:5000",
+  "baseUrl2": "https://dry-reaches-96843.herokuapp.com/"
 }
