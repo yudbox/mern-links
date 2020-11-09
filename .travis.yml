@@ -13,7 +13,7 @@ script:
   - cd ../ && echo "${HEROKU_LOGIN}" | base64 -d >> ~/.netrc
   - heroku git:remote -a dry-reaches-96843
   - git add .
-  - git commit -am 'Heroku deployment'
+  - git commit --allow-empty -m 'Heroku deployment'
   - git push --force heroku master
 
 deploy:
