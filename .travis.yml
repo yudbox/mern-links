@@ -10,9 +10,7 @@ script:
   - cd client
   - npm ci -q
   - npm run build
-  - echo "hk.xaked.com" > build/CNAME
   - cd ../ && echo "${HEROKU_LOGIN}" | base64 -d >> ~/.netrc
-  - git init
   - heroku git:remote -a dry-reaches-96843
   - git add .
   - git commit -am 'Heroku deployment'
