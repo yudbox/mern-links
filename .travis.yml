@@ -9,7 +9,7 @@ cache:
 script:
   - cd client
   - npm ci -q
-  - npm run build
+  - npm run deploy
   - cd ../ && echo "${HEROKU_LOGIN}" | base64 -d >> ~/.netrc
   - heroku git:remote -a dry-reaches-96843
   - git add .
