@@ -13,7 +13,8 @@ script:
   - echo "hk.xaked.com" > build/CNAME
   - cd ../ && echo "${HEROKU_LOGIN}" | base64 -d >> ~/.netrc
   - git init
-  - heroku git:remote -a dry-reaches-96843
+  - heroku git:clone -a dry-reaches-96843
+  -  cd dry-reaches-96843
   - git add .
   - git commit -am 'Heroku deployment'
   - git push --force heroku master
